@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VA.gov - Veterans Affairs | Contact Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Bitter:wght@700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================
+     USWDS-INSPIRED VA.GOV MOCKUP
+     Uses Source Sans (USWDS standard) + VA colors
+     ============================================ */
+  :root {
+    --va-blue: #003F72;
+    --va-blue-dark: #112E51;
+    --va-blue-light: #0071BB;
+    --va-red: #E31C3D;
+    --va-gold: #FDB81E;
+    --va-gray-dark: #323A45;
+    --va-gray: #5B616B;
+    --va-gray-light: #AEB0B5;
+    --va-gray-lightest: #F1F1F1;
+    --va-white: #FFFFFF;
+    --va-cream: #FFF1D2;
+    --uswds-focus: #2491FF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--va-gray-dark);
+    line-height: 1.6;
+    background: var(--va-gray-lightest);
+    min-height: 100vh;
+  }
+
+  /* OFFICIAL BANNER */
+  .usa-banner {
+    background: var(--va-gray-lightest);
+    padding: 4px 0;
+    border-bottom: 1px solid #DFE1E2;
+    font-size: 12px;
+    color: var(--va-gray);
+  }
+  .usa-banner-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .usa-banner .flag { font-size: 14px; }
+  .usa-banner strong { color: var(--va-gray-dark); }
+
+  /* HEADER */
+  .va-header {
+    background: var(--va-blue-dark);
+    padding: 0;
+  }
+  .va-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .va-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .va-seal {
+    width: 44px;
+    height: 44px;
+    background: var(--va-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 14px;
+    color: var(--va-blue-dark);
+    letter-spacing: -0.5px;
+  }
+  .va-logo-text { color: white; }
+  .va-logo-text .va-name {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Bitter', serif;
+    letter-spacing: -0.3px;
+  }
+  .va-logo-text .va-tagline {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+  .va-header-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .va-header-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.9;
+  }
+  .va-header-links a:hover { opacity: 1; text-decoration: underline; }
+  .va-sign-in {
+    background: var(--va-gold);
+    color: var(--va-blue-dark) !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+  }
+
+  /* NAVIGATION */
+  .va-nav {
+    background: var(--va-blue);
+    border-bottom: 4px solid var(--va-red);
+  }
+  .va-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 0;
+  }
+  .va-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    transition: all 0.15s;
+  }
+  .va-nav a:hover { background: rgba(255,255,255,0.08); }
+  .va-nav a.active { border-bottom-color: var(--va-gold); background: rgba(255,255,255,0.05); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--va-blue-dark) 0%, var(--va-blue) 100%);
+    padding: 48px 0;
+    color: white;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero h1 {
+    font-family: 'Bitter', serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 680px;
+    line-height: 1.5;
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+
+  .content-primary h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--va-blue-dark);
+    margin-bottom: 16px;
+  }
+  .content-primary p {
+    font-size: 16px;
+    color: var(--va-gray);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* AI ASSISTANT CARD */
+  .ai-card {
+    background: var(--va-white);
+    border: 2px solid var(--va-blue-light);
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .ai-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .ai-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--va-blue);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .ai-card-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--va-blue-dark);
+  }
+  .ai-card-header .badge {
+    background: #E7F6EC;
+    color: #0A6B35;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .ai-card p {
+    font-size: 15px;
+    color: var(--va-gray);
+    margin-bottom: 20px;
+  }
+
+  /* SUGGESTED QUESTIONS */
+  .suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .suggestion-chip {
+    background: var(--va-gray-lightest);
+    border: 1px solid #DFE1E2;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--va-blue-light);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .suggestion-chip:hover {
+    background: #E1F3F8;
+    border-color: var(--va-blue-light);
+  }
+
+  /* CHAT MOCK */
+  .chat-container {
+    background: var(--va-gray-lightest);
+    border-radius: 8px;
+    padding: 16px;
+    max-height: 380px;
+    overflow-y: auto;
+  }
+  .chat-message {
+    margin-bottom: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .chat-message.user { flex-direction: row-reverse; }
+  .chat-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .chat-avatar.ai { background: var(--va-blue); color: white; }
+  .chat-avatar.human { background: var(--va-gray-light); color: white; }
+  .chat-bubble {
+    background: white;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 80%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .chat-message.user .chat-bubble {
+    background: var(--va-blue);
+    color: white;
+  }
+  .chat-input-area {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .chat-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #DFE1E2;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+  }
+  .chat-input:focus { border-color: var(--uswds-focus); box-shadow: 0 0 0 2px rgba(36,145,255,0.2); }
+  .chat-input::placeholder { color: var(--va-gray-light); }
+  .chat-send {
+    background: var(--va-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .chat-send:hover { background: var(--va-blue-dark); }
+
+  /* SIDEBAR */
+  .sidebar h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--va-blue-dark);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--va-gold);
+  }
+  .sidebar-card {
+    background: white;
+    border: 1px solid #DFE1E2;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .sidebar-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--va-blue-dark);
+    margin-bottom: 6px;
+  }
+  .sidebar-card p {
+    font-size: 13px;
+    color: var(--va-gray);
+    line-height: 1.5;
+  }
+  .sidebar-card .phone {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--va-blue);
+    margin-top: 6px;
+  }
+
+  /* ALERT BAR */
+  .alert-bar {
+    background: var(--va-cream);
+    border-left: 4px solid var(--va-gold);
+    padding: 12px 24px;
+  }
+  .alert-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .alert-bar strong { color: var(--va-blue-dark); }
+
+  /* FOOTER */
+  .va-footer {
+    background: var(--va-gray-dark);
+    padding: 40px 0 20px;
+    color: white;
+    margin-top: 48px;
+  }
+  .va-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .footer-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    color: var(--va-gray-light);
+  }
+  .footer-col a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.85;
+  }
+  .footer-col a:hover { opacity: 1; text-decoration: underline; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 16px;
+    font-size: 12px;
+    color: var(--va-gray-light);
+    text-align: center;
+  }
+
+  /* PRESENTER NOTE */
+  .presenter-note {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1A1A2E;
+    color: #E2E8F0;
+    padding: 12px 24px;
+    font-size: 12px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #C9A227;
+  }
+  .presenter-note .note-label {
+    background: #C9A227;
+    color: #1A1A2E;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 12px;
+  }
+  .presenter-note .dismiss {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+<!-- US GOVERNMENT BANNER -->
+<div class="usa-banner">
+  <div class="usa-banner-inner">
+    <span class="flag">&#127482;&#127480;</span>
+    <span>An official website of the <strong>United States government</strong></span>
+  </div>
+</div>
+
+<!-- VA HEADER -->
+<header class="va-header">
+  <div class="va-header-inner">
+    <a href="#" class="va-logo">
+      <div class="va-seal">VA</div>
+      <div class="va-logo-text">
+        <div class="va-name">VA.gov</div>
+        <div class="va-tagline">U.S. Department of Veterans Affairs</div>
+      </div>
+    </a>
+    <div class="va-header-links">
+      <a href="#">Find a VA Location</a>
+      <a href="#">Resources</a>
+      <a href="#" class="va-sign-in">Sign in</a>
+    </div>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="va-nav">
+  <div class="va-nav-inner">
+    <a href="#">Health care</a>
+    <a href="#">Disability</a>
+    <a href="#">Education</a>
+    <a href="#">Records</a>
+    <a href="#" class="active">Contact us</a>
+    <a href="#">Housing</a>
+  </div>
+</nav>
+
+<!-- ALERT -->
+<div class="alert-bar">
+  <div class="alert-inner">
+    <span>&#9888;&#65039;</span>
+    <span><strong>System notice:</strong> Some Veterans using Login.gov may experience MFA issues. If affected, try using ID.me as an alternative sign-in method.</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>How can we help you today?</h1>
+    <p>Get answers to your questions about VA benefits, health care, education, and services. Our AI assistant is available 24/7 to help.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+  <div class="content-primary">
+    <div class="ai-card">
+      <div class="ai-card-header">
+        <div class="ai-icon">AI</div>
+        <h3>VA Virtual Assistant</h3>
+        <span class="badge">Available 24/7</span>
+      </div>
+      <p>Ask a question about your benefits, claims, health care, or any VA service. I can look up information, check statuses, and help you find what you need.</p>
+
+      <div class="suggestions">
+        <span class="suggestion-chip">How do I check my claim status?</span>
+        <span class="suggestion-chip">What documents do I need for DIC?</span>
+        <span class="suggestion-chip">My prescription isn't showing up</span>
+        <span class="suggestion-chip">GI Bill enrollment help</span>
+        <span class="suggestion-chip">Telehealth appointment issue</span>
+      </div>
+
+      <div class="chat-container">
+        <div class="chat-message">
+          <div class="chat-avatar ai">VA</div>
+          <div class="chat-bubble">Hello! I'm the VA Virtual Assistant. I can help you with questions about benefits, claims, health care, education, and more. How can I assist you today?</div>
+        </div>
+        <div class="chat-message user">
+          <div class="chat-avatar human">JT</div>
+          <div class="chat-bubble">I filed a claim in January and haven't heard anything. It's been 5 months. What's going on?</div>
+        </div>
+        <div class="chat-message">
+          <div class="chat-avatar ai">VA</div>
+          <div class="chat-bubble">I can see your disability compensation claim filed in January. It's currently in the <strong>Evidence Gathering</strong> stage. Here's what that means:<br><br>
+          &#8226; Your claim was received and accepted<br>
+          &#8226; VA is collecting medical records and service records<br>
+          &#8226; No additional evidence has been requested from you<br><br>
+          I understand 5 months feels like a long time with no communication. The typical timeline for this claim type is 3-6 months, but Agent Orange presumptive claims have been averaging longer due to backlog.<br><br>
+          <strong>Would you like me to:</strong><br>
+          &#8226; Flag this for priority review (it's beyond the standard window)<br>
+          &#8226; Show you how to upload supporting documents that might speed things up<br>
+          &#8226; Connect you with a VSO representative who can advocate on your behalf</div>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" class="chat-input" placeholder="Type your question here...">
+        <button class="chat-send">Send</button>
+      </div>
+    </div>
+
+    <h2>Other ways to get help</h2>
+    <p>If you'd prefer to speak with someone directly, you can call us or visit a VA location near you.</p>
+  </div>
+
+  <aside class="sidebar">
+    <h3>Quick links</h3>
+    <div class="sidebar-card">
+      <h4>Veterans Crisis Line</h4>
+      <p>Free, confidential support for Veterans in crisis and their families.</p>
+      <div class="phone">988 (press 1)</div>
+    </div>
+    <div class="sidebar-card">
+      <h4>MyHealtheVet</h4>
+      <p>Manage prescriptions, send secure messages, and view your health records.</p>
+    </div>
+    <div class="sidebar-card">
+      <h4>Check claim status</h4>
+      <p>Sign in to track the status of your pending disability or pension claim.</p>
+    </div>
+    <div class="sidebar-card">
+      <h4>VA benefits hotline</h4>
+      <p>Monday - Friday, 8:00 a.m. - 9:00 p.m. ET</p>
+      <div class="phone">1-800-827-1000</div>
+    </div>
+  </aside>
+</main>
+
+<!-- FOOTER -->
+<footer class="va-footer">
+  <div class="va-footer-inner">
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Veteran programs</h4>
+        <a href="#">Health care</a>
+        <a href="#">Disability compensation</a>
+        <a href="#">Education & training</a>
+        <a href="#">Careers & employment</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect with us</h4>
+        <a href="#">Veterans Crisis Line</a>
+        <a href="#">Find a VA location</a>
+        <a href="#">Ask a question</a>
+        <a href="#">Toll-free numbers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Agency</h4>
+        <a href="#">About VA</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">FOIA</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <div class="footer-col">
+        <h4>Policies</h4>
+        <a href="#">Section 508</a>
+        <a href="#">No FEAR Act</a>
+        <a href="#">Plain language</a>
+        <a href="#">IG reports</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      U.S. Department of Veterans Affairs | 810 Vermont Avenue, NW Washington DC 20420 | This is a demonstration environment.
+    </div>
+  </div>
+</footer>
+
+<!-- PRESENTER NOTE -->
+<div class="presenter-note" id="presenterNote">
+  <div>
+    <span class="note-label">Presenter</span>
+    <span>This is a mock citizen portal for demo purposes. The pre-filled conversation shows what a Veteran would experience. During live demo, use the DevRev PLuG widget (bottom-right) or switch to the Computer desktop interface for the agent-side view.</span>
+  </div>
+  <button class="dismiss" onclick="document.getElementById('presenterNote').style.display='none'">Dismiss</button>
+</div>
+
+<!-- PLuG EMBED -->
+<script src="https://plug-platform.devrev.ai/static/plug.js"></script>
+<script>
+  if (window.plugSDK) {
+    window.plugSDK.init({
+      app_id: 'federalcivdemo'
+    });
+  }
+</script>
+
+</body>
+</html>
